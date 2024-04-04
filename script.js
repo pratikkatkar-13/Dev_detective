@@ -2,7 +2,7 @@
 const searchbar = document.querySelector(".searchbar-container");
 const profilecontainer = document.querySelector(".profile-container");
 const root = document.documentElement.style;
-const get = (param) => document.getElementById(`${param}`);
+const get = (param) => document.getElementById(`${param}`); //made an function for an getElement byt id
 const url = "https://api.github.com/users/";
 const noresults = get("no-results");
 const btnmode = get("btn-mode");
@@ -156,29 +156,8 @@ function init() {
   //darkMode = true -> dark mode enable karna h 
   //darMode = false -> light mode enable karna h 
   darkMode = false;
-
-  //HW
-// const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  const value = localStorage.getItem("dark-mode");
-
-  if(value === null) {
-    console.log("null k andar");
-    localStorage.setItem("dark-mode", darkMode);
-    lightModeProperties();
-  }
-  else if(value == "true") {
-    console.log("truer k andar");
-    darkModeProperties();
-  }
-  else if(value == "false") {
-    console.log("false k andar");
-    lightModeProperties();
-  }
-
-
-  //by default, pranaygupta ki info show krre h UI pr
-  getUserData(url + "thepranaygupta");
+  //by default, called profile
+  getUserData(url + "pratikkatkar-13");
 }
 
 init();
